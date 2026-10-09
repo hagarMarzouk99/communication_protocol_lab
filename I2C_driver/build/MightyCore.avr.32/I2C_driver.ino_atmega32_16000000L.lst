@@ -1,0 +1,675 @@
+
+C:\Users\DELL\AppData\Local\arduino\sketches\ABD0573A4C09C64F9F482E02D9736095/I2C_driver.ino.elf:     file format elf32-avr
+
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+__vectors():
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   8:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  10:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  14:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  18:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  1c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  20:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  24:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  28:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  2c:	0c 94 45 00 	jmp	0x8a	; 0x8a <__vector_11>
+  30:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  34:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  38:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  3c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  40:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  44:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  48:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  4c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  50:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+__trampolines_start():
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_clear_bss>:
+__do_clear_bss():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2441
+  60:	20 e0       	ldi	r18, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2442
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2443
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2444
+  66:	01 c0       	rjmp	.+2      	; 0x6a <.do_clear_bss_start>
+
+00000068 <.do_clear_bss_loop>:
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2446
+  68:	1d 92       	st	X+, r1
+
+0000006a <.do_clear_bss_start>:
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2448
+  6a:	a9 36       	cpi	r26, 0x69	; 105
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2449
+  6c:	b2 07       	cpc	r27, r18
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2450
+  6e:	e1 f7       	brne	.-8      	; 0x68 <.do_clear_bss_loop>
+.do_clear_bss_start():
+  70:	0e 94 8f 00 	call	0x11e	; 0x11e <main>
+  74:	0c 94 16 01 	jmp	0x22c	; 0x22c <_exit>
+
+00000078 <__bad_interrupt>:
+__vector_1():
+  78:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000007c <I2C_Write(unsigned char)>:
+_Z9I2C_Writeh():
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:40
+
+
+void I2C_Write(unsigned char data)
+{
+    // Put data into TWI Data Register
+    TWDR = data;
+  7c:	83 b9       	out	0x03, r24	; 3
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:43
+
+    // Start data transmission
+    TWCR = (1 << TWINT) |
+  7e:	84 e8       	ldi	r24, 0x84	; 132
+  80:	86 bf       	out	0x36, r24	; 54
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:47
+           (1 << TWEN);
+
+    // Wait until transmission is complete
+    while (!(TWCR & (1 << TWINT)));
+  82:	06 b6       	in	r0, 0x36	; 54
+  84:	07 fe       	sbrs	r0, 7
+  86:	fd cf       	rjmp	.-6      	; 0x82 <I2C_Write(unsigned char)+0x6>
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:48
+}
+  88:	08 95       	ret
+
+0000008a <__vector_11>:
+__vector_11():
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:159
+#if defined(__AVR_ATtiny24__) || defined(__AVR_ATtiny44__) || defined(__AVR_ATtiny84__)
+ISR(TIM0_OVF_vect)
+#else
+ISR(TIMER0_OVF_vect)
+#endif
+{
+  8a:	1f 92       	push	r1
+  8c:	0f 92       	push	r0
+  8e:	0f b6       	in	r0, 0x3f	; 63
+  90:	0f 92       	push	r0
+  92:	11 24       	eor	r1, r1
+  94:	2f 93       	push	r18
+  96:	3f 93       	push	r19
+  98:	8f 93       	push	r24
+  9a:	9f 93       	push	r25
+  9c:	af 93       	push	r26
+  9e:	bf 93       	push	r27
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:167
+  static unsigned char timer0_exact = 0;
+#endif
+
+  // copy these to local variables so they can be stored in registers
+  // (volatile variables must be read from memory on every access, so this saves time)
+  unsigned long m = timer0_millis;
+  a0:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <timer0_millis>
+  a4:	90 91 66 00 	lds	r25, 0x0066	; 0x800066 <timer0_millis+0x1>
+  a8:	a0 91 67 00 	lds	r26, 0x0067	; 0x800067 <timer0_millis+0x2>
+  ac:	b0 91 68 00 	lds	r27, 0x0068	; 0x800068 <timer0_millis+0x3>
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:168
+  unsigned char f = timer0_fract;
+  b0:	30 91 64 00 	lds	r19, 0x0064	; 0x800064 <timer0_fract>
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:170
+
+  f += FRACT_INC FRACT_INC_PLUS;
+  b4:	23 e0       	ldi	r18, 0x03	; 3
+  b6:	23 0f       	add	r18, r19
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:200
+    ++f;
+  }
+#endif
+#endif // CORRECT_EXACT_MILLIS
+
+  if (f >= FRACT_MAX) {
+  b8:	2d 37       	cpi	r18, 0x7D	; 125
+  ba:	68 f1       	brcs	.+90     	; 0x116 <__vector_11+0x8c>
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:201
+    f -= FRACT_MAX;
+  bc:	26 e8       	ldi	r18, 0x86	; 134
+  be:	23 0f       	add	r18, r19
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:202
+    m += MILLIS_INC + 1;
+  c0:	02 96       	adiw	r24, 0x02	; 2
+  c2:	a1 1d       	adc	r26, r1
+  c4:	b1 1d       	adc	r27, r1
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:208
+  }
+  else {
+    m += MILLIS_INC;
+  }
+
+  timer0_fract = f;
+  c6:	20 93 64 00 	sts	0x0064, r18	; 0x800064 <timer0_fract>
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:209
+  timer0_millis = m;
+  ca:	80 93 65 00 	sts	0x0065, r24	; 0x800065 <timer0_millis>
+  ce:	90 93 66 00 	sts	0x0066, r25	; 0x800066 <timer0_millis+0x1>
+  d2:	a0 93 67 00 	sts	0x0067, r26	; 0x800067 <timer0_millis+0x2>
+  d6:	b0 93 68 00 	sts	0x0068, r27	; 0x800068 <timer0_millis+0x3>
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:211
+#ifndef CORRECT_EXACT_MICROS
+  timer0_overflow_count++;
+  da:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+  de:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+  e2:	a0 91 62 00 	lds	r26, 0x0062	; 0x800062 <__DATA_REGION_ORIGIN__+0x2>
+  e6:	b0 91 63 00 	lds	r27, 0x0063	; 0x800063 <__DATA_REGION_ORIGIN__+0x3>
+  ea:	01 96       	adiw	r24, 0x01	; 1
+  ec:	a1 1d       	adc	r26, r1
+  ee:	b1 1d       	adc	r27, r1
+  f0:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+  f4:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+  f8:	a0 93 62 00 	sts	0x0062, r26	; 0x800062 <__DATA_REGION_ORIGIN__+0x2>
+  fc:	b0 93 63 00 	sts	0x0063, r27	; 0x800063 <__DATA_REGION_ORIGIN__+0x3>
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:213
+#endif
+}
+ 100:	bf 91       	pop	r27
+ 102:	af 91       	pop	r26
+ 104:	9f 91       	pop	r25
+ 106:	8f 91       	pop	r24
+ 108:	3f 91       	pop	r19
+ 10a:	2f 91       	pop	r18
+ 10c:	0f 90       	pop	r0
+ 10e:	0f be       	out	0x3f, r0	; 63
+ 110:	0f 90       	pop	r0
+ 112:	1f 90       	pop	r1
+ 114:	18 95       	reti
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:205
+  if (f >= FRACT_MAX) {
+    f -= FRACT_MAX;
+    m += MILLIS_INC + 1;
+  }
+  else {
+    m += MILLIS_INC;
+ 116:	01 96       	adiw	r24, 0x01	; 1
+ 118:	a1 1d       	adc	r26, r1
+ 11a:	b1 1d       	adc	r27, r1
+ 11c:	d4 cf       	rjmp	.-88     	; 0xc6 <__vector_11+0x3c>
+
+0000011e <main>:
+main():
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/main.cpp:34
+
+//void setupUSB() __attribute__((weak));
+//void setupUSB() { }
+
+int main(void)
+{
+ 11e:	cf 93       	push	r28
+ 120:	df 93       	push	r29
+ 122:	00 d0       	rcall	.+0      	; 0x124 <main+0x6>
+ 124:	00 d0       	rcall	.+0      	; 0x126 <main+0x8>
+ 126:	cd b7       	in	r28, 0x3d	; 61
+ 128:	de b7       	in	r29, 0x3e	; 62
+init():
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:945
+
+void init()
+{
+  // this needs to be called before setup() or some functions won't
+  // work there
+  sei();
+ 12a:	78 94       	sei
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:966
+#if defined(__AVR_ATmega64__) || defined(__AVR_ATmega128__)
+  // CPU specific: different values for the ATmega64/128
+  TCCR0 |= _BV(WGM01) | _BV(WGM00) | _BV(CS02);
+#elif defined(TCCR0) && defined(CS01) && defined(CS00)
+  // This combination is for the ATmega8535, ATmega8, ATmega16, ATmega32, ATmega8515, ATmega162
+  TCCR0 |= _BV(CS01) | _BV(CS00);
+ 12c:	83 b7       	in	r24, 0x33	; 51
+ 12e:	83 60       	ori	r24, 0x03	; 3
+ 130:	83 bf       	out	0x33, r24	; 51
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:968
+  #if defined(WGM00) && defined(WGM01) // The ATmega8 doesn't have WGM00 and WGM01
+    TCCR0 |= _BV(WGM01) | _BV(WGM00);
+ 132:	83 b7       	in	r24, 0x33	; 51
+ 134:	88 64       	ori	r24, 0x48	; 72
+ 136:	83 bf       	out	0x33, r24	; 51
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:982
+  #error Timer 0 prescale factor 64 not set correctly
+#endif
+
+// Enable timer 0 overflow interrupt
+#if defined(TIMSK) && defined(TOIE0)
+  TIMSK |= _BV(TOIE0);
+ 138:	89 b7       	in	r24, 0x39	; 57
+ 13a:	81 60       	ori	r24, 0x01	; 1
+ 13c:	89 bf       	out	0x39, r24	; 57
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:995
+// this is better for motors as it ensures an even waveform
+// note, however, that fast pwm mode can achieve a frequency of up
+// 8 MHz (with a 16 MHz clock) at 50% duty cycle
+
+#if defined(TCCR1B) && defined(CS11) && defined(CS10)
+  TCCR1B = _BV(CS11); // Set timer 1 prescale factor to 64
+ 13e:	82 e0       	ldi	r24, 0x02	; 2
+ 140:	8e bd       	out	0x2e, r24	; 46
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:997
+#if F_CPU >= 8000000L
+  TCCR1B |= _BV(CS10);
+ 142:	8e b5       	in	r24, 0x2e	; 46
+ 144:	81 60       	ori	r24, 0x01	; 1
+ 146:	8e bd       	out	0x2e, r24	; 46
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:1006
+#if F_CPU >= 8000000L
+  TCCR1 |= _BV(CS10);
+#endif
+#endif
+#if defined(TCCR1A) && defined(WGM10)
+  TCCR1A |= _BV(WGM10); // Put timer 1 in 8-bit phase correct pwm mode
+ 148:	8f b5       	in	r24, 0x2f	; 47
+ 14a:	81 60       	ori	r24, 0x01	; 1
+ 14c:	8f bd       	out	0x2f, r24	; 47
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:1011
+#endif
+
+// Set timer 2 prescale factor to 64
+#if defined(TCCR2) && defined(CS22)
+  TCCR2 |= _BV(CS22);
+ 14e:	85 b5       	in	r24, 0x25	; 37
+ 150:	84 60       	ori	r24, 0x04	; 4
+ 152:	85 bd       	out	0x25, r24	; 37
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:1020
+  TCCR2A |= _BV(CS22);
+#endif
+
+// Configure timer 2 for phase correct pwm (8-bit)
+#if defined(TCCR2) && defined(WGM20)
+  TCCR2 |= _BV(WGM20);
+ 154:	85 b5       	in	r24, 0x25	; 37
+ 156:	80 64       	ori	r24, 0x40	; 64
+ 158:	85 bd       	out	0x25, r24	; 37
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:1050
+#endif
+
+#if defined(ADCSRA)
+  // set a2d prescaler so we are inside the desired 50-200 KHz range.
+  #if F_CPU >= 16000000 // 16 MHz / 128 = 125 KHz
+    ADCSRA = _BV(ADPS2) | _BV(ADPS1) | _BV(ADPS0) | _BV(ADEN);
+ 15a:	87 e8       	ldi	r24, 0x87	; 135
+ 15c:	86 b9       	out	0x06, r24	; 6
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/wiring.c:1068
+
+  // The bootloader connects pins 0 and 1 to the USART; disconnect them
+  // here so they can be used as normal digital i/o; they will be
+  // reconnected in Serial.begin()
+#if defined(UCSRB)
+  UCSRB = 0;
+ 15e:	1a b8       	out	0x0a, r1	; 10
+I2C_Init():
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:6
+#include "I2C.h"
+
+void I2C_Init(void)
+{
+    // Set I2C prescaler to 1
+    TWSR = 0x00;
+ 160:	11 b8       	out	0x01, r1	; 1
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:9
+
+    // Set I2C clock frequency
+    TWBR = 32;
+ 162:	80 e2       	ldi	r24, 0x20	; 32
+ 164:	80 b9       	out	0x00, r24	; 0
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:12
+
+    // Enable TWI
+    TWCR = (1 << TWEN);
+ 166:	84 e0       	ldi	r24, 0x04	; 4
+ 168:	86 bf       	out	0x36, r24	; 54
+UART_Init():
+C:\Users\DELL\Downloads\driver\I2C_driver/UART.cpp:11
+
+
+void UART_Init(void)
+{
+    // Set baud rate
+    UBRRH = (unsigned char)(UBRR_VALUE >> 8);
+ 16a:	10 bc       	out	0x20, r1	; 32
+C:\Users\DELL\Downloads\driver\I2C_driver/UART.cpp:12
+    UBRRL = (unsigned char)UBRR_VALUE;
+ 16c:	87 e6       	ldi	r24, 0x67	; 103
+ 16e:	89 b9       	out	0x09, r24	; 9
+C:\Users\DELL\Downloads\driver\I2C_driver/UART.cpp:15
+
+    // Enable transmitter and receiver
+    UCSRB = (1 << RXEN) |
+ 170:	88 e1       	ldi	r24, 0x18	; 24
+ 172:	8a b9       	out	0x0a, r24	; 10
+C:\Users\DELL\Downloads\driver\I2C_driver/UART.cpp:22
+
+    // Frame format:
+    // 8 data bits
+    // 1 stop bit
+    // No parity
+    UCSRC = (1 << URSEL) |
+ 174:	86 e8       	ldi	r24, 0x86	; 134
+ 176:	80 bd       	out	0x20, r24	; 32
+I2C_Start():
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:19
+
+
+void I2C_Start(void)
+{
+    // Send START condition
+    TWCR = (1 << TWINT) |
+ 178:	54 ea       	ldi	r21, 0xA4	; 164
+ 17a:	f5 2e       	mov	r15, r21
+I2C_Read_ACK():
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:54
+
+
+unsigned char I2C_Read_ACK(void)
+{
+    // Receive data and send ACK
+    TWCR = (1 << TWINT) |
+ 17c:	64 ec       	ldi	r22, 0xC4	; 196
+ 17e:	e6 2e       	mov	r14, r22
+I2C_Read_NACK():
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:69
+
+
+unsigned char I2C_Read_NACK(void)
+{
+    // Receive data without sending ACK
+    TWCR = (1 << TWINT) |
+ 180:	74 e8       	ldi	r23, 0x84	; 132
+ 182:	d7 2e       	mov	r13, r23
+I2C_Stop():
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:31
+
+
+void I2C_Stop(void)
+{
+    // Send STOP condition
+    TWCR = (1 << TWINT) |
+ 184:	e4 e9       	ldi	r30, 0x94	; 148
+ 186:	ce 2e       	mov	r12, r30
+main():
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/main.cpp:47
+  
+  setup();
+    
+  for (;;) {
+    loop();
+    if (serialEventRun) serialEventRun();
+ 188:	00 e0       	ldi	r16, 0x00	; 0
+ 18a:	10 e0       	ldi	r17, 0x00	; 0
+I2C_Start():
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:19
+
+
+void I2C_Start(void)
+{
+    // Send START condition
+    TWCR = (1 << TWINT) |
+ 18c:	f6 be       	out	0x36, r15	; 54
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:24
+           (1 << TWSTA) |
+           (1 << TWEN);
+
+    // Wait until START condition is transmitted
+    while (!(TWCR & (1 << TWINT)));
+ 18e:	06 b6       	in	r0, 0x36	; 54
+ 190:	07 fe       	sbrs	r0, 7
+ 192:	fd cf       	rjmp	.-6      	; 0x18e <main+0x70>
+LM75_ReadTemperature_x2():
+C:\Users\DELL\Downloads\driver\I2C_driver/LM75.cpp:29
+
+
+    // =========================
+    // 2. Send LM75 address + WRITE
+    // =========================
+    I2C_Write((LM75_ADDRESS << 1) | 0);
+ 194:	80 e9       	ldi	r24, 0x90	; 144
+ 196:	0e 94 3e 00 	call	0x7c	; 0x7c <I2C_Write(unsigned char)>
+C:\Users\DELL\Downloads\driver\I2C_driver/LM75.cpp:35
+
+
+    // =========================
+    // 3. Select Temperature Register
+    // =========================
+    I2C_Write(0x00);
+ 19a:	80 e0       	ldi	r24, 0x00	; 0
+ 19c:	0e 94 3e 00 	call	0x7c	; 0x7c <I2C_Write(unsigned char)>
+I2C_Start():
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:19
+
+
+void I2C_Start(void)
+{
+    // Send START condition
+    TWCR = (1 << TWINT) |
+ 1a0:	f6 be       	out	0x36, r15	; 54
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:24
+           (1 << TWSTA) |
+           (1 << TWEN);
+
+    // Wait until START condition is transmitted
+    while (!(TWCR & (1 << TWINT)));
+ 1a2:	06 b6       	in	r0, 0x36	; 54
+ 1a4:	07 fe       	sbrs	r0, 7
+ 1a6:	fd cf       	rjmp	.-6      	; 0x1a2 <main+0x84>
+LM75_ReadTemperature_x2():
+C:\Users\DELL\Downloads\driver\I2C_driver/LM75.cpp:47
+
+
+    // =========================
+    // 5. Send LM75 address + READ
+    // =========================
+    I2C_Write((LM75_ADDRESS << 1) | 1);
+ 1a8:	81 e9       	ldi	r24, 0x91	; 145
+ 1aa:	0e 94 3e 00 	call	0x7c	; 0x7c <I2C_Write(unsigned char)>
+I2C_Read_ACK():
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:54
+
+
+unsigned char I2C_Read_ACK(void)
+{
+    // Receive data and send ACK
+    TWCR = (1 << TWINT) |
+ 1ae:	e6 be       	out	0x36, r14	; 54
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:59
+           (1 << TWEA) |
+           (1 << TWEN);
+
+    // Wait until data is received
+    while (!(TWCR & (1 << TWINT)));
+ 1b0:	06 b6       	in	r0, 0x36	; 54
+ 1b2:	07 fe       	sbrs	r0, 7
+ 1b4:	fd cf       	rjmp	.-6      	; 0x1b0 <main+0x92>
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:62
+
+    // Return received data
+    return TWDR;
+ 1b6:	83 b1       	in	r24, 0x03	; 3
+I2C_Read_NACK():
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:69
+
+
+unsigned char I2C_Read_NACK(void)
+{
+    // Receive data without sending ACK
+    TWCR = (1 << TWINT) |
+ 1b8:	d6 be       	out	0x36, r13	; 54
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:73
+           (1 << TWEN);
+
+    // Wait until data is received
+    while (!(TWCR & (1 << TWINT)));
+ 1ba:	06 b6       	in	r0, 0x36	; 54
+ 1bc:	07 fe       	sbrs	r0, 7
+ 1be:	fd cf       	rjmp	.-6      	; 0x1ba <main+0x9c>
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:76
+
+    // Return received data
+    return TWDR;
+ 1c0:	23 b1       	in	r18, 0x03	; 3
+I2C_Stop():
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C.cpp:31
+
+
+void I2C_Stop(void)
+{
+    // Send STOP condition
+    TWCR = (1 << TWINT) |
+ 1c2:	c6 be       	out	0x36, r12	; 54
+LM75_ReadTemperature_x2():
+C:\Users\DELL\Downloads\driver\I2C_driver/LM75.cpp:72
+
+    // =========================
+    // 9. Combine the 9-bit data
+    // =========================
+    raw_temperature =
+        ((int16_t)temperature_MSB << 1) |
+ 1c4:	90 e0       	ldi	r25, 0x00	; 0
+ 1c6:	88 0f       	add	r24, r24
+ 1c8:	99 1f       	adc	r25, r25
+C:\Users\DELL\Downloads\driver\I2C_driver/LM75.cpp:73
+        (temperature_LSB >> 7);
+ 1ca:	30 e0       	ldi	r19, 0x00	; 0
+ 1cc:	22 0f       	add	r18, r18
+ 1ce:	23 2f       	mov	r18, r19
+ 1d0:	22 1f       	adc	r18, r18
+ 1d2:	33 0b       	sbc	r19, r19
+C:\Users\DELL\Downloads\driver\I2C_driver/LM75.cpp:71
+
+
+    // =========================
+    // 9. Combine the 9-bit data
+    // =========================
+    raw_temperature =
+ 1d4:	82 2b       	or	r24, r18
+ 1d6:	93 2b       	or	r25, r19
+C:\Users\DELL\Downloads\driver\I2C_driver/LM75.cpp:79
+
+
+    // =========================
+    // 10. Sign extension
+    // =========================
+    if (raw_temperature & 0x0100)
+ 1d8:	90 fd       	sbrc	r25, 0
+C:\Users\DELL\Downloads\driver\I2C_driver/LM75.cpp:81
+    {
+        raw_temperature -= 0x0200;
+ 1da:	92 50       	subi	r25, 0x02	; 2
+UART_SendTemperatureValue_x2():
+C:\Users\DELL\Downloads\driver\I2C_driver/UART.cpp:101
+    UART_SendString(" C");
+}
+void UART_SendTemperatureValue_x2(int16_t temperature_x2)
+{
+    // Send low byte first
+    UART_SendChar((unsigned char)(temperature_x2 & 0xFF));
+ 1dc:	28 2f       	mov	r18, r24
+UART_SendChar():
+C:\Users\DELL\Downloads\driver\I2C_driver/UART.cpp:31
+
+
+void UART_SendChar(unsigned char data)
+{
+    // Wait until transmit buffer is empty
+    while (!(UCSRA & (1 << UDRE)));
+ 1de:	5d 9b       	sbis	0x0b, 5	; 11
+ 1e0:	fe cf       	rjmp	.-4      	; 0x1de <main+0xc0>
+C:\Users\DELL\Downloads\driver\I2C_driver/UART.cpp:34
+
+    // Put data in UART Data Register
+    UDR = data;
+ 1e2:	2c b9       	out	0x0c, r18	; 12
+UART_SendTemperatureValue_x2():
+C:\Users\DELL\Downloads\driver\I2C_driver/UART.cpp:104
+{
+    // Send low byte first
+    UART_SendChar((unsigned char)(temperature_x2 & 0xFF));
+
+    // Send high byte
+    UART_SendChar((unsigned char)((temperature_x2 >> 8) & 0xFF));
+ 1e4:	89 2f       	mov	r24, r25
+UART_SendChar():
+C:\Users\DELL\Downloads\driver\I2C_driver/UART.cpp:31
+
+
+void UART_SendChar(unsigned char data)
+{
+    // Wait until transmit buffer is empty
+    while (!(UCSRA & (1 << UDRE)));
+ 1e6:	5d 9b       	sbis	0x0b, 5	; 11
+ 1e8:	fe cf       	rjmp	.-4      	; 0x1e6 <main+0xc8>
+C:\Users\DELL\Downloads\driver\I2C_driver/UART.cpp:34
+
+    // Put data in UART Data Register
+    UDR = data;
+ 1ea:	8c b9       	out	0x0c, r24	; 12
+loop():
+C:\Users\DELL\Downloads\driver\I2C_driver/I2C_driver.ino:28
+
+    // Send temperature value to MCU2
+    UART_SendTemperatureValue_x2(temperature_x2);
+
+    // Delay
+    for (volatile long i = 0; i < 500000; i++);
+ 1ec:	19 82       	std	Y+1, r1	; 0x01
+ 1ee:	1a 82       	std	Y+2, r1	; 0x02
+ 1f0:	1b 82       	std	Y+3, r1	; 0x03
+ 1f2:	1c 82       	std	Y+4, r1	; 0x04
+ 1f4:	89 81       	ldd	r24, Y+1	; 0x01
+ 1f6:	9a 81       	ldd	r25, Y+2	; 0x02
+ 1f8:	ab 81       	ldd	r26, Y+3	; 0x03
+ 1fa:	bc 81       	ldd	r27, Y+4	; 0x04
+ 1fc:	80 32       	cpi	r24, 0x20	; 32
+ 1fe:	91 4a       	sbci	r25, 0xA1	; 161
+ 200:	a7 40       	sbci	r26, 0x07	; 7
+ 202:	b1 05       	cpc	r27, r1
+ 204:	64 f4       	brge	.+24     	; 0x21e <main+0x100>
+ 206:	89 81       	ldd	r24, Y+1	; 0x01
+ 208:	9a 81       	ldd	r25, Y+2	; 0x02
+ 20a:	ab 81       	ldd	r26, Y+3	; 0x03
+ 20c:	bc 81       	ldd	r27, Y+4	; 0x04
+ 20e:	01 96       	adiw	r24, 0x01	; 1
+ 210:	a1 1d       	adc	r26, r1
+ 212:	b1 1d       	adc	r27, r1
+ 214:	89 83       	std	Y+1, r24	; 0x01
+ 216:	9a 83       	std	Y+2, r25	; 0x02
+ 218:	ab 83       	std	Y+3, r26	; 0x03
+ 21a:	bc 83       	std	Y+4, r27	; 0x04
+ 21c:	eb cf       	rjmp	.-42     	; 0x1f4 <main+0xd6>
+main():
+C:\Users\DELL\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\3.1.0\cores\MCUdude_corefiles/main.cpp:47
+ 21e:	01 15       	cp	r16, r1
+ 220:	11 05       	cpc	r17, r1
+ 222:	09 f4       	brne	.+2      	; 0x226 <main+0x108>
+ 224:	b3 cf       	rjmp	.-154    	; 0x18c <main+0x6e>
+ 226:	0e 94 00 00 	call	0	; 0x0 <__vectors>
+ 22a:	b0 cf       	rjmp	.-160    	; 0x18c <main+0x6e>
+
+0000022c <_exit>:
+exit():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2278
+ 22c:	f8 94       	cli
+
+0000022e <__stop_program>:
+__stop_program():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2280
+ 22e:	ff cf       	rjmp	.-2      	; 0x22e <__stop_program>
